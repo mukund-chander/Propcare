@@ -3,24 +3,29 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --propecare-gold: #C9A227;
+  --propecare-yellow: #F2C94C;
+  --propecare-orange: #E67E22;
+  --propecare-brown: #8B5E3C;
+  --propecare-purple: #8F00FF;
+  --propecare-deep-purple: #4B2C6F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  
+  --color-brand-gold: var(--propecare-gold);
+  --color-brand-yellow: var(--propecare-yellow);
+  --color-brand-orange: var(--propecare-orange);
+  --color-brand-brown: var(--propecare-brown);
+  --color-brand-purple: var(--propecare-purple);
+  --color-brand-deep-purple: var(--propecare-deep-purple);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
