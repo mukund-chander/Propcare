@@ -41,12 +41,12 @@ export default function AboutPage() {
               <div className="md:w-1/2">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" alt="Construction" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
-                    <img src="https://images.unsplash.com/photo-1581094794329-cd132c3a8f52?q=80&w=2070&auto=format&fit=crop" alt="Engineer" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Construction" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1974&auto=format&fit=crop" alt="Engineer" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
                   </div>
                   <div className="space-y-4 pt-12">
-                    <img src="https://images.unsplash.com/photo-1590644365607-1c5a38fc43e0?q=80&w=2012&auto=format&fit=crop" alt="Solar" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-                    <img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?q=80&w=1964&auto=format&fit=crop" alt="Team" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" alt="Solar" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Team" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
                   </div>
                 </div>
               </div>

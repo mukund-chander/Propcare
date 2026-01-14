@@ -32,7 +32,7 @@ export default function Home() {
                 <Button href="/contact" size="lg" variant="primary">
                   Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button href="/portfolio" size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
+                <Button href="/portfolio" size="lg" variant="ghost" className="border-2 border-white text-white hover:bg-white hover:text-gray-900">
                   View Our Work
                 </Button>
               </div>
@@ -107,7 +107,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="lg:w-1/2">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] w-full bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1590644365607-1c5a38fc43e0?q=80&w=2012&auto=format&fit=crop" alt="Construction Site" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop" alt="Construction Site" className="w-full h-full object-cover" />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
                         <p className="text-white font-bold text-lg">Bangalore, India</p>
                     </div>
@@ -184,7 +184,7 @@ export default function Home() {
                     Partner with Propecare Infra Projects for your next infrastructure venture.
                 </p>
                 <div className="flex justify-center gap-4">
-                    <Button href="/contact" variant="secondary" size="lg" className="bg-white text-brand-gold hover:bg-gray-100 border-none">
+                    <Button href="/contact" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-brand-gold">
                         Get a Quote
                     </Button>
                 </div>
