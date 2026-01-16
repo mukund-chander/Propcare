@@ -35,4 +35,10 @@ body {
   overflow-x: hidden;
 }
 
+button, 
+[role="button"],
+.cursor-pointer {
+  cursor: pointer;
+}
+
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -37,11 +38,17 @@ const AdaniNavbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className={cn(
-              "text-2xl font-bold transition-colors",
-              isScrolled ? "text-gray-900" : "text-white"
-            )}>
-              PROPECARE
+            <div className="relative w-40 h-10">
+                <Image
+                  src="/logo.png"
+                  alt="Propecare Infra Projects"
+                  fill
+                  className={cn(
+                    "object-contain object-left transition-all duration-300",
+                    !isScrolled && "brightness-0 invert"
+                  )}
+                  priority
+                />
             </div>
           </Link>
 

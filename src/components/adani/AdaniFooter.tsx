@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 
 const AdaniFooter = () => {
@@ -30,7 +31,16 @@ const AdaniFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-brand-gold mb-4">PROPECARE</h3>
+            <Link href="/" className="inline-block mb-4">
+              <div className="relative w-48 h-12">
+                <Image
+                  src="/logo.png"
+                  alt="Propecare Infra Projects"
+                  fill
+                  className="object-contain object-left brightness-0 invert"
+                />
+              </div>
+            </Link>
             <p className="text-gray-400 text-sm">
               Building infrastructure for a sustainable tomorrow
             </p>
