@@ -1,11 +1,8 @@
 import React from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 
 export default function TermsAndConditions() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      <Header />
       <main className="flex-grow bg-white py-20">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="text-3xl font-bold text-gray-900 mb-8">Terms and Conditions</h1>
@@ -47,7 +44,6 @@ export default function TermsAndConditions() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

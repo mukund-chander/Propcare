@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import PageHero from "@/components/layout/PageHero";
+import AdaniNavbar from "@/components/adani/AdaniNavbar";
+import AdaniFooter from "@/components/adani/AdaniFooter";
 import { MoveRight } from "lucide-react";
 
 // Mock Data for Projects
@@ -73,77 +74,76 @@ export default function PortfolioPage() {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans">
-      <Header />
-      <main className="flex-grow bg-gray-50">
-        {/* Page Header */}
-        <section className="bg-white py-16 md:py-24 border-b border-gray-100">
-          <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Projects</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Showcasing our precision and expertise across diverse infrastructure sectors.
-            </p>
-          </div>
-        </section>
+    <>
+      <AdaniNavbar />
+      <div className="min-h-screen flex flex-col font-sans">
+        <main className="flex-grow bg-gray-50">
+          {/* Page Header */}
+          <PageHero
+            title="Our Projects"
+            subtitle="Showcasing our precision and expertise across diverse infrastructure sectors."
+            backgroundImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop"
+          />
 
-        {/* Filters */}
-        <section className="pt-10 pb-6 px-6">
-            <div className="container mx-auto flex flex-wrap gap-2 justify-center">
-                {filters.map((filter) => (
-                  <button
-                    key={filter.name}
-                    onClick={() => setActiveCategory(filter.value)}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                      activeCategory === filter.value
-                        ? "bg-brand-gold text-white shadow-md transform scale-105"
-                        : "bg-white text-gray-600 border border-gray-200 hover:border-brand-gold hover:text-brand-gold"
-                    }`}
-                  >
-                    {filter.name}
-                  </button>
-                ))}
-            </div>
-        </section>
+          {/* Filters */}
+          <section className="pt-10 pb-6 px-6">
+              <div className="container mx-auto flex flex-wrap gap-2 justify-center">
+                  {filters.map((filter) => (
+                    <button
+                      key={filter.name}
+                      onClick={() => setActiveCategory(filter.value)}
+                      className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                        activeCategory === filter.value
+                          ? "bg-brand-gold text-white shadow-md transform scale-105"
+                          : "bg-white text-gray-600 border border-gray-200 hover:border-brand-gold hover:text-brand-gold"
+                      }`}
+                    >
+                      {filter.name}
+                    </button>
+                  ))}
+              </div>
+          </section>
 
-        {/* Projects Grid */}
-        <section className="py-12 pb-24">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
-                <div key={project.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group animate-fade-in-up">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                       src={project.image}
-                       alt={project.title}
-                       fill
-                       className="object-cover group-hover:scale-110 transition-transform duration-500"
-                       unoptimized
-                    />
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-bold text-gray-900 rounded-full">
-                        {project.category}
+          {/* Projects Grid */}
+          <section className="py-12 pb-24">
+            <div className="container mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredProjects.map((project) => (
+                  <div key={project.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group animate-fade-in-up">
+                    <div className="relative h-64 overflow-hidden">
+                      <Image
+                         src={project.image}
+                         alt={project.title}
+                         fill
+                         className="object-cover group-hover:scale-110 transition-transform duration-500"
+                         unoptimized
+                      />
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-bold text-gray-900 rounded-full">
+                          {project.category}
+                      </div>
+                    </div>
+                    <div className="p-6">
+                       <div className="flex justify-between items-start mb-2">
+                          <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
+                          <span className={`text-xs px-2 py-1 rounded ${project.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'}`}>
+                              {project.status}
+                          </span>
+                       </div>
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
+                      <button className="text-brand-gold font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                          View Details <MoveRight size={16} />
+                      </button>
                     </div>
                   </div>
-                  <div className="p-6">
-                     <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                        <span className={`text-xs px-2 py-1 rounded ${project.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'}`}>
-                            {project.status}
-                        </span>
-                     </div>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
-                    <button className="text-brand-gold font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                        View Details <MoveRight size={16} />
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          </section>
+        </main>
+      </div>
+      <AdaniFooter />
+    </>
   );
 }

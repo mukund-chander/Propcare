@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SmoothScrolling from "@/components/SmoothScrolling";
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Propecare Infra Projects | Building Strong Foundations",
-  description: "Propecare Infra Projects delivers high-quality infrastructure solutions across construction, highways, and solar projects with a commitment to safety and precision.",
+  title: "Propecare Infra Projects - Excellence in Infrastructure",
+  description: "Leading infrastructure subcontractor specializing in highways, expressways, and urban development projects across India.",
 };
 
 export default function RootLayout({
@@ -20,11 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} antialiased`}
-        suppressHydrationWarning
-      >
-        {children}
+      <body className={`${inter.variable} antialiased`}>
+        <SmoothScrolling>
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
+        </SmoothScrolling>
       </body>
     </html>
   );
