@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
-import Button from "../ui/Button";
+import Button from "../ui/LegacyButton";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

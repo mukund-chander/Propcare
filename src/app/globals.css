@@ -24,8 +24,15 @@
   --color-brand-deep-purple: var(--propecare-deep-purple);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
 }
+
+
